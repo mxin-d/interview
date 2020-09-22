@@ -15,11 +15,9 @@ Function.prototype.__bind = function (ctx, ...args) {
     const __this = this;
 
     return function F() {
-        // new 绑定
-        if (this instanceof F) return new __this(...args, ...arguments);
-
-        // 直接调用时绑定 this
-        return __this.apply(ctx, [...args, ...arguments]);
+        return this instanceof F
+            ? new __this(...args, ...arguments) // new 绑定
+            : __this.apply(ctx, [...args, ...arguments]); // 直接调用时绑定 this
     };
 };
 
