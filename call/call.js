@@ -5,8 +5,11 @@
  * @param  {...any} args
  * @returns {any} 调用 this 的返回值，若无有返回值，则返回 undefined
  */
-Function.prototype.__call = function (ctx = window, ...args) {
+Function.prototype.__call = function (ctx, ...args) {
     if (typeof this !== 'function') throw new TypeError('Error');
+
+    // 考虑 null 情况，参数默认赋值会无效
+    if (!ctx) ctx = window;
 
     // 将 this 函数保存在 ctx 上
     ctx.fn = this;
@@ -42,7 +45,6 @@ console.log(food);
 //   __proto__:
 //     constructor: ƒ Food(name, price)
 //     __proto__: Object
-
 
 // Function.prototype.call()
 console.log('Function.prototype.call()');
