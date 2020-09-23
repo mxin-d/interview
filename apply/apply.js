@@ -19,6 +19,7 @@ Function.prototype.__apply = function (ctx, args) {
 
     // 删除 ctx 上的 fn
     delete ctx.fn;
+    
     return result;
 };
 
@@ -34,5 +35,6 @@ console.log(max); // 7
 
 // Function.prototype.apply()
 console.log('Function.prototype.apply()');
+
 const min = Math.min.apply(null, numbers);
 console.log(min); // 2
