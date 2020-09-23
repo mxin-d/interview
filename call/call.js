@@ -19,6 +19,7 @@ Function.prototype.__call = function (ctx, ...args) {
 
     // 删除 ctx 上的 fn
     delete ctx.fn;
+    
     return res;
 };
 
