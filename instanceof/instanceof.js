@@ -15,7 +15,8 @@ function __instanceof(obj, __constructor) {
     }
 }
 
-// 定义构造函数
+// ------------------------------ 测试 ------------------------------
+
 function C() {}
 function D() {}
 
