@@ -80,16 +80,6 @@ d.e.f.g.h = 2;
 d.i.j.k.l = 4;
 
 console.log('d', d);
-// {e: {…}}
-//   e:
-//     f:
-//       g:
-//         h: 2
 
 // 不影响原有对象
 console.log('deepObj', deepObj);
-// {e: {…}}
-//   e:
-//     f:
-//       g:
-//         h: 1
